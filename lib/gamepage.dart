@@ -42,14 +42,15 @@ class _GamePageState extends State<GamePage> {
     ];
     return gamebuttons;
   }
-  int winner=-1;
-  int tie=0;
+
+  int winner = -1;
+  int tie = 0;
 
   void resetGame() {
     //if (Navigator.canPop(context)) {
-      if(winner==1 || winner==2 || tie==1){
+    if (winner == 1 || winner == 2 || tie == 1) {
       Navigator.pop(context);
-      winner=-1;
+      winner = -1;
     }
     setState(() {
       buttonlist = doInit();
@@ -61,7 +62,6 @@ class _GamePageState extends State<GamePage> {
     bool won_1, won_2;
     print(won_1);
 
-    
     if ((player1.contains(1) && player1.contains(2) && player1.contains(3)) ||
         (player1.contains(4) && player1.contains(5) && player1.contains(6)) ||
         (player1.contains(7) && player1.contains(8) && player1.contains(9)) ||
@@ -106,7 +106,7 @@ class _GamePageState extends State<GamePage> {
               ));
     } else if (winner == -1) {
       if (buttonlist.every((p) => p.text != '')) {
-        tie=1;
+        tie = 1;
         showDialog(
             context: context,
             builder: (_) => DialogueBoxes('Tie', 'The Game is Tie', resetGame));

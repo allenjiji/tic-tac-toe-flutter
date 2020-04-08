@@ -42,10 +42,13 @@ class _GamePageState extends State<GamePage> {
     ];
     return gamebuttons;
   }
+  int winner=-1;
 
   void resetGame() {
-    if (Navigator.canPop(context)) {
+    //if (Navigator.canPop(context)) {
+      if(winner==1 || winner==2){
       Navigator.pop(context);
+      winner=-1;
     }
     setState(() {
       buttonlist = doInit();
@@ -57,7 +60,7 @@ class _GamePageState extends State<GamePage> {
     bool won_1, won_2;
     print(won_1);
 
-    var winner = -1;
+    
     if ((player1.contains(1) && player1.contains(2) && player1.contains(3)) ||
         (player1.contains(4) && player1.contains(5) && player1.contains(6)) ||
         (player1.contains(7) && player1.contains(8) && player1.contains(9)) ||

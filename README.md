@@ -1,6 +1,6 @@
-# tictactoe
+# Tic Tac Toe
 
-A Flutter Mobile Game.
+A Flutter Tic Tac Toe Mobile Game.
 
 ## This is a simple implementation of TIC TAC TOE in Flutter.
 
